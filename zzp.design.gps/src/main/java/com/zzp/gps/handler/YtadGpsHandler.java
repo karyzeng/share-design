@@ -14,6 +14,7 @@ public class YtadGpsHandler extends BaseGpsHandler{
 
     @Override
     public List<Vehicle> internalListGpsInfos(String vehicles, GpsApiConfig config) {
+        System.out.println("YtadGpsHandler -> internalListGpsInfos");
         return null;
     }
 }
