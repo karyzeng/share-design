@@ -40,8 +40,12 @@ public class Client {
             }
             vehicleProcessor.setHandler(handler);
 
+            // 将vehicleProcess添加到线程池中
             executor.execute(vehicleProcessor);
         }
+
+        // 关闭线程池
+        executor.shutdown();
 
     }
 
@@ -59,7 +63,6 @@ public class Client {
         ytadConfig.setSystem("ytad");
         ytadConfig.setUrl("http://www.ytad.com/test/gps");
         ytadConfig.setHandlerClass("com.zzp.gps.handler.YtadGpsHandler");
-        gpsApiConfigs.add(ytadConfig);
         gpsApiConfigs.add(ytadConfig);
 
         return gpsApiConfigs;
