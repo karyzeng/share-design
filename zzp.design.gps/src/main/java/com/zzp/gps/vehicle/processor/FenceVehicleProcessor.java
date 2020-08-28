@@ -9,6 +9,7 @@ public class FenceVehicleProcessor extends BaseVehicleProcessor{
 
     @Override
     public void doRun() {
-
+        this.getHandler().listGpsInfos(null, null);
+        System.out.println("FenceVehicleProcessor -> doRun");
     }
 }
