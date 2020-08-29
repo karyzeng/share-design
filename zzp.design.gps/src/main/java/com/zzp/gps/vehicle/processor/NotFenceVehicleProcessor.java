@@ -10,6 +10,6 @@ public class NotFenceVehicleProcessor extends BaseVehicleProcessor{
     @Override
     public void doRun() {
         this.getHandler().listGpsInfos(null, null);
-        System.out.println("NotFenceVehicleProcessor -> doRun");
+        System.out.println(Thread.currentThread().getName() + ": NotFenceVehicleProcessor -> doRun");
     }
 }
