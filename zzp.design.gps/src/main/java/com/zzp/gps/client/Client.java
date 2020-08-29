@@ -8,11 +8,7 @@ import com.zzp.gps.vehicle.processor.NotFenceVehicleProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @Description gps client
@@ -73,7 +69,13 @@ public class Client {
         int maxPoolSize = 10;
         long keepAliveTime = 60L;
         BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(100);
-        return new ThreadPoolExecutor(corePoolSize, maxPoolSize, keepAliveTime, TimeUnit.MILLISECONDS, queue);
+        return new ThreadPoolExecutor(corePoolSize, maxPoolSize, keepAliveTime, TimeUnit.MILLISECONDS, queue, new ThreadFactory() {
+            // 自定义ThreadFactory，重新命名线程池名称以及线程池的线程名称
+            public Thread newThread(Runnable r) {
+                Thread thread = new Thread(r, "gps-thread-pool-" + r.hashCode());
+                return thread;
+            }
+        });
     }
 
     private GpsHandler findGpsHandler(String handlerClass) {
