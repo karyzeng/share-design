@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * @Description 公共商品
- * @Author Garyzeng
+ * @Author karyzeng
  * @since 2020.09.03
  **/
 @Data
