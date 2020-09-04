@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @Description 启动类
- * @Author Garyzeng
+ * @Author Karyzeng
  * @since 2020.08.30
  **/
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)// 配置多个数据源需要关闭自动配置数据源
