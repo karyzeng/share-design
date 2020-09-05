@@ -7,6 +7,6 @@ package com.zzp.scheduled.task.listeners;
  **/
 public interface TaskListener {
 
-    void countAndSave();
+    void handle();
 
 }
