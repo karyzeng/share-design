@@ -14,13 +14,19 @@ import java.util.List;
 public class CommonGoodsBAdapter extends BaseTaskListener<CommonGoods>{
 
     @Override
-    public void save(List<CommonGoods> list) {
-        System.out.println("调用保存公共商品方法");
-    }
-
-    @Override
     public List<CommonGoods> count() {
         System.out.println("调用汇总公共商品B方法");
         return null;
+    }
+
+    @Override
+    public List<CommonGoods> convert(List<CommonGoods> list) {
+        System.out.println("调用公共商品B转换方法");
+        return null;
+    }
+
+    @Override
+    public void save(List<CommonGoods> list) {
+        System.out.println("调用保存公共商品方法");
     }
 }
