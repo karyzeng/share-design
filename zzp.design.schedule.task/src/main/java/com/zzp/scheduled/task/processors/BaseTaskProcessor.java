@@ -34,7 +34,7 @@ public abstract class BaseTaskProcessor {
         this.beforeRun();
 
         for (TaskListener listener : listeners) {
-            listener.countAndSave();
+            listener.handle();
         }
 
         this.afterRun();
