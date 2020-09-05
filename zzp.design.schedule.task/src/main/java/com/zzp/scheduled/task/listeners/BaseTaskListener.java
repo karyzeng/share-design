@@ -10,11 +10,13 @@ import java.util.List;
 public abstract class BaseTaskListener<T> implements TaskListener{
 
     @Override
-    public void countAndSave() {
-        this.save(this.count());
+    public void handle() {
+        this.save(this.convert(this.count()));
     }
 
-    public abstract void save(List<T> list);
-
     public abstract List<T> count();
+
+    public abstract List<T> convert(List<T> list);
+
+    public abstract void save(List<T> list);
 }
